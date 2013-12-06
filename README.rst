@@ -15,12 +15,9 @@ should just work for most of the users
 Plugging tgextodt
 ----------------------------
 
-In your application *config/app_cfg.py* import **plug**::
+In your application *config/app_cfg.py* import **plug**, then at the *end of the file* call plug with tgextodt::
 
     from tgext.pluggable import plug
-
-Then at the *end of the file* call plug with tgextodt::
-
     plug(base_config, 'tgextodt')
 
 
@@ -31,6 +28,7 @@ To use an odt template you have to declare the type in your controller as below:
 
     @expose('odt:example.templates.about', content_type='application/vnd.oasis.opendocument.text')
     def about(self):
+        response.headerlist.append(('Content-Disposition', 'attachment;filename=filename.odt'))
         return dict(hello='Hello World')
 
 
@@ -40,5 +38,5 @@ To define a variable field in libreoffice you can dig more information on https:
 
 For more complex features, like for loops and more detailed reporting stuff, you want to read the documentation of the py3o library itself http://py3otemplate.readthedocs.org/
 
-Now you can directly download your output from  */about* or */about.odt*
+Now you can directly download your output from  **/about** or **/about.odt**
 
