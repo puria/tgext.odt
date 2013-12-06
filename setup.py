@@ -23,12 +23,12 @@ except IOError:
 
 setup(
     name='tgext.odt',
-    version='0.1',
-    description='',
+    version='0.1a',
+    description='tgext.odt is a Pluggable application for TurboGears2 that allows the rendering of .odt (openoffice/libreoffice) documents as an output templates.',
     long_description=README,
-    author='',
-    author_email='',
-    #url='',
+    author='Puria Nafisi Azizi',
+    author_email='puria.nafisi@axant.it',
+    url='https://github.com/puria/tgext.odt',
     keywords='turbogears2.application',
     packages=find_packages(exclude=['ez_setup']),
     install_requires=install_requires,
