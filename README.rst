@@ -27,7 +27,7 @@ Then at the *end of the file* call plug with tgextodt::
 Usage
 --------------------
 
-To use an odt template you have to declare the type in your controller as below:
+To use an odt template you have to declare the type in your controller as below::
 
     @expose('odt:example.templates.about', content_type='application/vnd.oasis.opendocument.text')
     def about(self):
