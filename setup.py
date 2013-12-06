@@ -25,7 +25,7 @@ except IOError:
 
 setup(
     name='tgext.odt',
-    version='0.1a',
+    version='0.2',
     description='tgext.odt is a Pluggable application for TurboGears2 that allows the rendering of .odt (openoffice/libreoffice) documents as an output templates.',
     long_description=README,
     author='Puria Nafisi Azizi',
