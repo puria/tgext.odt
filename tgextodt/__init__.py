@@ -33,11 +33,13 @@ class RenderOdt(object):
             template_name, render_template,
             **kwargs)
 
-def setup_odt_renderer(self): 
+
+def setup_odt_renderer(self):
     self.render_functions.odt = RenderOdt()
 
+
 def plugme(app_config, options):
-    import types
-    app_config.setup_odt_renderer = types.MethodType(setup_odt_renderer, app_config)
+    from types import MethodType
+    app_config.setup_odt_renderer = MethodType(setup_odt_renderer, app_config)
     app_config.renderers.append('odt')
     return dict(appid='tgextodt', global_helpers=False)

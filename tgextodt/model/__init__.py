@@ -1,12 +1,15 @@
 # -*- coding: utf-8 -*-
-from sqlalchemy.ext.declarative import declarative_base
+import logging
+import tg
 from tgext.pluggable import PluggableSession
 
+log = logging.getLogger(__name__)
+
 DBSession = PluggableSession()
-DeclarativeBase = declarative_base()
 
 def init_model(app_session):
     DBSession.configure(app_session)
 
-from models import Sample
 
+def configure_models():
+    pass
